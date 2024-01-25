@@ -1,5 +1,11 @@
+// Initial Selectors
 gridContainer = document.querySelector('#gridContainer');
+promptButton = document.querySelector('button')
 
+// Initial Event Listener
+promptButton.addEventListener('click', promptGridCreator)
+
+// Functions 
 function gridSquareCreator(row) {
     let gridSquare = document.createElement('div');
     gridSquare.setAttribute('class','gridSquare');
@@ -22,6 +28,7 @@ function gridCreator(x) {
             gridSquareCreator(row)
         }
     })
+    attachGridListener()
 }
 
 function gridEmpty() {
@@ -31,30 +38,32 @@ function gridEmpty() {
     })
 }
 
-gridCreator(16)
-
-gridSquares = document.querySelectorAll('.gridSquare')
-gridSquares.forEach((square) => {
-    square.addEventListener('mousemove', () =>{
-        square.classList.add('gridSquareToggle')
-    })
-})
-
-promptButton = document.querySelector('button')
-promptButton.addEventListener('click', () => {
+function promptGridCreator(){
     let gridBase = prompt("Enter the base to build the grid")
+    
     if (gridBase > 100){
         alert("Please enter a value under 100")
         return
     }
-    
     gridEmpty()
     gridCreator(gridBase)
+    
+    
+}
+
+function attachGridListener() {
     gridSquares = document.querySelectorAll('.gridSquare')
     gridSquares.forEach((square) => {
         square.addEventListener('mousemove', () =>{
             square.classList.add('gridSquareToggle')
         })
-})
-})
+    })
+}
+
+// Initial Run
+
+gridCreator(16)
+
+
+
 
