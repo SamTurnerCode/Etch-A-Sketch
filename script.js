@@ -26,6 +26,9 @@ function gridCreator(x) {
 
 gridCreator(16)
 
-
-
-
+gridSquares = document.querySelectorAll('.gridSquare')
+gridSquares.forEach((square) => {
+    square.addEventListener('mousemove', () =>{
+        square.classList.add('gridSquareToggle')
+    })
+})

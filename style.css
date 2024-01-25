@@ -16,10 +16,14 @@
 .gridSquare {
     border: 1px;
     border-style: solid;
+    border-collapse: collapse;
     flex:1;
 }
 
-.gridSquare:hover {
+.gridSquareToggle {
     background-color: black;
 }
 
+button {
+    margin: 5px;
+}
