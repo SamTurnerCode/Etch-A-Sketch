@@ -1,0 +1,25 @@
+
+#gridContainer {
+    width: 500px;
+    height: 500px;
+    border: 1px;
+    border-style: solid;
+    display: flex;
+    flex-direction: column;
+}
+
+.gridRow {
+    display: flex;
+    flex: 1;
+}
+
+.gridSquare {
+    border: 1px;
+    border-style: solid;
+    flex:1;
+}
+
+.gridSquare:hover {
+    background-color: black;
+}
+
